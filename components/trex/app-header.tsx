@@ -17,7 +17,7 @@ export function AppHeader() {
           </div>
           <div>
             <h1 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
-              Trex <span className="text-accent">Smart Sales</span>
+              Trex <span className="text-accent">Artemis</span>
             </h1>
             <p className="text-sm text-muted-foreground">
               Motor inteligente de oportunidades comerciales
