@@ -1,7 +1,7 @@
 "use client"
 
 import type { FormEvent } from "react"
-import { Search, Sparkles } from "lucide-react"
+import { Search, Sparkles, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MOCK_CLIENT_NAMES } from "@/lib/mock-clients"
@@ -10,10 +10,19 @@ interface ClientSearchProps {
   value: string
   onChange: (value: string) => void
   onAnalyze: () => void
+  onClear: () => void
+  canClear: boolean
   loading: boolean
 }
 
-export function ClientSearch({ value, onChange, onAnalyze, loading }: ClientSearchProps) {
+export function ClientSearch({
+  value,
+  onChange,
+  onAnalyze,
+  onClear,
+  canClear,
+  loading,
+}: ClientSearchProps) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (!loading && value.trim()) onAnalyze()
@@ -55,6 +64,18 @@ export function ClientSearch({ value, onChange, onAnalyze, loading }: ClientSear
           <Sparkles className="h-5 w-5" aria-hidden="true" />
           {loading ? "Analizando…" : "Analizar cliente"}
         </Button>
+        {canClear && (
+          <Button
+            type="button"
+            variant="ghost"
+            onClick={onClear}
+            disabled={loading}
+            className="h-12 px-4 text-muted-foreground hover:text-foreground"
+          >
+            <X className="h-4 w-4" aria-hidden="true" />
+            Limpiar
+          </Button>
+        )}
       </form>
 
       <div className="flex flex-wrap items-center gap-2">

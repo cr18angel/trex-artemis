@@ -271,7 +271,7 @@ function buildGenericResult(name: string): AnalysisResult {
  *   return res.json()
  */
 export async function analyzeClient(name: string): Promise<AnalysisResult> {
-  await new Promise((resolve) => setTimeout(resolve, 600))
+  await new Promise((resolve) => setTimeout(resolve, 5000))
   const key = name.trim().toLowerCase()
   return MOCK_DB[key] ?? buildGenericResult(name)
 }

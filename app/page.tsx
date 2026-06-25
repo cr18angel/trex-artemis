@@ -27,6 +27,13 @@ export default function Page() {
     setLoading(false)
   }
 
+  function handleClear() {
+    setQuery("")
+    setResult(null)
+    setNotice(null)
+    setLoading(false)
+  }
+
   function handlePrepareOffer(pkg: SuggestedPackage) {
     setNotice(`Oferta preparada: "${pkg.name}" lista para enviar al cliente.`)
     setTimeout(() => setNotice(null), 3500)
@@ -41,6 +48,8 @@ export default function Page() {
           value={query}
           onChange={setQuery}
           onAnalyze={handleAnalyze}
+          onClear={handleClear}
+          canClear={Boolean(query || result || loading)}
           loading={loading}
         />
 
