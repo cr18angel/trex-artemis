@@ -1,16 +1,23 @@
-import { Sparkles, UserCircle2 } from "lucide-react"
+import { UserCircle2 } from "lucide-react"
 
 export function AppHeader() {
   return (
     <header className="border-b border-border bg-card">
+      {/* Franja superior con el rojo de marca */}
+      <div className="h-1 w-full bg-accent" aria-hidden="true" />
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Sparkles className="h-5 w-5" aria-hidden="true" />
+          {/* Logotipo provisional: reemplazar por el logo real */}
+          <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm">
+            <span className="text-lg font-bold tracking-tight">T</span>
+            <span
+              className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-card bg-accent"
+              aria-hidden="true"
+            />
           </div>
           <div>
-            <h1 className="text-lg font-semibold leading-tight text-foreground">
-              Trex Smart Sales
+            <h1 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
+              Trex <span className="text-accent">Smart Sales</span>
             </h1>
             <p className="text-sm text-muted-foreground">
               Motor inteligente de oportunidades comerciales

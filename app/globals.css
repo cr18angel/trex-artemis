@@ -49,30 +49,31 @@
 }
 
 :root {
+  /* Identidad Trex: azul marino + acento rojo */
   color-scheme: light;
-  --background: oklch(0.985 0.003 220);
-  --foreground: oklch(0.22 0.02 230);
+  --background: oklch(0.98 0.004 250);
+  --foreground: oklch(0.21 0.04 262);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.02 230);
+  --card-foreground: oklch(0.21 0.04 262);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.02 230);
-  --primary: oklch(0.42 0.06 222);
+  --popover-foreground: oklch(0.21 0.04 262);
+  --primary: oklch(0.31 0.09 262);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.95 0.008 220);
-  --secondary-foreground: oklch(0.32 0.03 225);
-  --muted: oklch(0.96 0.005 220);
-  --muted-foreground: oklch(0.52 0.02 225);
-  --accent: oklch(0.62 0.13 152);
+  --secondary: oklch(0.95 0.012 258);
+  --secondary-foreground: oklch(0.31 0.09 262);
+  --muted: oklch(0.96 0.008 258);
+  --muted-foreground: oklch(0.52 0.03 262);
+  --accent: oklch(0.55 0.22 27);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.008 220);
-  --input: oklch(0.9 0.008 220);
-  --ring: oklch(0.42 0.06 222);
-  --chart-1: oklch(0.42 0.06 222);
-  --chart-2: oklch(0.62 0.13 152);
-  --chart-3: oklch(0.55 0.05 225);
-  --chart-4: oklch(0.7 0.1 80);
-  --chart-5: oklch(0.65 0.15 30);
+  --destructive: oklch(0.55 0.22 27);
+  --border: oklch(0.9 0.012 258);
+  --input: oklch(0.9 0.012 258);
+  --ring: oklch(0.31 0.09 262);
+  --chart-1: oklch(0.31 0.09 262);
+  --chart-2: oklch(0.55 0.22 27);
+  --chart-3: oklch(0.45 0.08 258);
+  --chart-4: oklch(0.62 0.13 250);
+  --chart-5: oklch(0.7 0.12 30);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
