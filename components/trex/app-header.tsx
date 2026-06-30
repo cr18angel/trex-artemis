@@ -1,4 +1,4 @@
-import { UserCircle2 } from "lucide-react"
+import { UserCircle2, Rocket  } from "lucide-react"
 
 export function AppHeader() {
   return (
@@ -9,7 +9,9 @@ export function AppHeader() {
         <div className="flex items-center gap-3">
           {/* Logotipo provisional: reemplazar por el logo real */}
           <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm">
-            <span className="text-lg font-bold tracking-tight">T</span>
+            {/* <span className="text-lg font-bold tracking-tight">T</span> */}
+              <Rocket className="h-6 w-6 text-primary-foreground" strokeWidth={2.4} />
+
             <span
               className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-card bg-accent"
               aria-hidden="true"
