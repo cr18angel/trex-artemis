@@ -65,7 +65,7 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
                 <WalletCards className="h-5 w-5" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">Crédito disponible</p>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Crédito disponible (Monto en dolares)</p>
                 <p className="text-2xl font-semibold leading-tight text-foreground">{summary.availableCredit}</p>
               </div>
             </div>

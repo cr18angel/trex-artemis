@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Trex Smart Sales',
+  title: 'Trex Artemis',
   description:
     'Motor inteligente de oportunidades comerciales: análisis de clientes con ERP/SAP B1 e IA.',
   generator: 'v0.app',
