@@ -23,6 +23,7 @@ export interface ClientSummary {
   frequency: string
   mainLine: string
   opportunity: OpportunityLevel
+  availableCredit: string
 }
 
 export interface AnalysisResult {
