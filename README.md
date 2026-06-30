@@ -34,3 +34,9 @@ To learn more, take a look at the following resources:
 
 
 npm run dev -- -H 0.0.0.0 -p 3000
+
+despues prueba 
+http://192.168.0.147:3000/
+
+
+--agregar el historico crediticio 

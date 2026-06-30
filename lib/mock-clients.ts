@@ -17,6 +17,7 @@ const MOCK_DB: Record<string, AnalysisResult> = {
       frequency: "Cada 45 - 60 días",
       mainLine: "Maquinaria pesada y repuestos",
       opportunity: "Alto",
+      availableCredit: "$250.000",
     },
     insights: [
       {
@@ -78,6 +79,7 @@ const MOCK_DB: Record<string, AnalysisResult> = {
       frequency: "Cada 30 - 40 días",
       mainLine: "Tren de rodado y componentes de desgaste",
       opportunity: "Alto",
+      availableCredit: "$480.000",
     },
     insights: [
       {
@@ -139,6 +141,7 @@ const MOCK_DB: Record<string, AnalysisResult> = {
       frequency: "Cada 90 - 120 días",
       mainLine: "Filtros y lubricantes para flota",
       opportunity: "Medio",
+      availableCredit: "$125.000",
     },
     insights: [
       {
@@ -211,6 +214,7 @@ function buildGenericResult(name: string): AnalysisResult {
       frequency: "No determinada",
       mainLine: "Repuestos generales",
       opportunity: "Medio",
+      availableCredit: "$75.000",
     },
     insights: [
       {

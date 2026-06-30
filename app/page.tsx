@@ -67,6 +67,8 @@ export default function Page() {
         {!loading && result && (
           <div className="flex flex-col gap-8">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
+                              {/* <h1>prueba</h1> */}
+
               <div className="flex flex-col gap-6 lg:col-span-3">
                 <SummaryCard summary={result.summary} />
                 <InsightsGrid insights={result.insights} />
