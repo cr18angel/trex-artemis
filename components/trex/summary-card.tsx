@@ -1,4 +1,4 @@
-import { Building2, CalendarClock, Layers, Repeat, TrendingUp } from "lucide-react"
+import { Building2, CalendarClock, Layers, Repeat, TrendingUp, WalletCards } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { clientTypeClasses, opportunityClasses } from "@/lib/badge-styles"
@@ -49,11 +49,29 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
           </Badge>
         </div>
       </CardHeader>
-      <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Field icon={CalendarClock} label="Última compra" value={summary.lastPurchase} />
-        <Field icon={Repeat} label="Frecuencia estimada" value={summary.frequency} />
-        <Field icon={Layers} label="Línea principal de compra" value={summary.mainLine} />
-        <Field icon={TrendingUp} label="Tipo de cliente" value={summary.type} />
+      <CardContent className="space-y-4">
+        <div className="rounded-xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <WalletCards className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Crédito disponible</p>
+                <p className="text-2xl font-semibold leading-tight text-foreground">{summary.availableCredit}</p>
+              </div>
+            </div>
+            <Badge variant="outline" className="border-primary/20 bg-background/80 text-primary">
+              Simulado ERP
+            </Badge>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <Field icon={CalendarClock} label="Última compra" value={summary.lastPurchase} />
+          <Field icon={Repeat} label="Frecuencia estimada" value={summary.frequency} />
+          <Field icon={Layers} label="Línea principal de compra" value={summary.mainLine} />
+          <Field icon={TrendingUp} label="Tipo de cliente" value={summary.type} />
+        </div>
       </CardContent>
     </Card>
   )
