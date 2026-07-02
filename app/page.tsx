@@ -8,6 +8,7 @@ import { AnalysisLoading } from "@/components/trex/analysis-loading"
 import { SummaryCard } from "@/components/trex/summary-card"
 import { InsightsGrid } from "@/components/trex/insights-grid"
 import { PackagesSection } from "@/components/trex/packages-section"
+import { PartsLookupSection } from "@/components/trex/parts-lookup-section"
 import { AiSummaryPanel } from "@/components/trex/ai-summary-panel"
 import { analyzeClient } from "@/lib/mock-clients"
 import type { AnalysisResult, SuggestedPackage } from "@/lib/types"
@@ -82,6 +83,8 @@ export default function Page() {
               packages={result.packages}
               onPrepareOffer={handlePrepareOffer}
             />
+
+            <PartsLookupSection />
           </div>
         )}
 
