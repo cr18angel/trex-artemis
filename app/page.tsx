@@ -9,6 +9,7 @@ import { SummaryCard } from "@/components/trex/summary-card"
 import { InsightsGrid } from "@/components/trex/insights-grid"
 import { PackagesSection } from "@/components/trex/packages-section"
 import { AiSummaryPanel } from "@/components/trex/ai-summary-panel"
+import { generateQuotePdf } from "@/lib/generate-quote-pdf"
 import { analyzeClient } from "@/lib/mock-clients"
 import type { AnalysisResult, SuggestedPackage } from "@/lib/types"
 
@@ -34,8 +35,16 @@ export default function Page() {
     setLoading(false)
   }
 
-  function handlePrepareOffer(pkg: SuggestedPackage) {
-    setNotice(`Oferta preparada: "${pkg.name}" lista para enviar al cliente.`)
+  async function handlePrepareOffer(pkg: SuggestedPackage) {
+    try {
+      await generateQuotePdf({
+        clientName: result?.summary.name,
+        package: pkg,
+      })
+      setNotice(`Cotización descargada: "${pkg.name}" lista para enviar al cliente.`)
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "No se pudo generar la cotización PDF.")
+    }
     setTimeout(() => setNotice(null), 3500)
   }
 
