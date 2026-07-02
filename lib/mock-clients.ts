@@ -50,7 +50,7 @@ packages: [
     id: "prev",
     name: "Kit mantenimiento preventivo - 1000 horas",
     reason: "Alineado a su ciclo de obra y mantenimientos vencidos.",
-    products: ["Aceite hidráulico 20L", "Filtro de aceite", "Filtro de aire", "Refrigerante"],
+    products: ["54112445 - FILTRO DE COMBUSTIBLE ", "54104256 - MAIN AIR FILTER INSERT ", "54112446 - FUEL FILTER INSERT", "69949280 - FILTRO DE ACEITE "],
     probability: 82,
     model: "LIFTACE E 6/7 ECC 9 - 10001347980",
   },
