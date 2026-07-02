@@ -36,6 +36,8 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
           </div>
           <div>
             <h3 className="text-xl font-semibold text-foreground">{summary.name} </h3>
+
+            
             <Badge variant="outline" className={`mt-1 ${clientTypeClasses(summary.type)}`}>
               {summary.type}
             </Badge>
@@ -55,7 +57,7 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
           <Field icon={CalendarClock} label="Última compra" value={summary.lastPurchase} />
           <Field icon={Repeat} label="Frecuencia estimada" value={summary.frequency} />
           <Field icon={Layers} label="Línea principal de compra" value={summary.mainLine} />
-          <Field icon={TrendingUp} label="Tipo de cliente" value={summary.type} />
+          <Field icon={TrendingUp} label="Perfil de cliente" value={summary.type} />
         </div>
 
                <div className="rounded-xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -69,9 +71,9 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
                 <p className="text-2xl font-semibold leading-tight text-foreground">{summary.availableCredit}</p>
               </div>
             </div>
-            <Badge variant="outline" className="border-primary/20 bg-background/80 text-primary">
-              Simulado ERP
-            </Badge>
+            {/* <Badge variant="outline" className="border-primary/20 bg-background/80 text-primary">
+               ERP SAP 
+            </Badge> */}
           </div>
         </div>
       </CardContent>

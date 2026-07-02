@@ -12,10 +12,10 @@ const MOCK_DB: Record<string, AnalysisResult> = {
   "rental valdivia": {
     summary: {
       name: "RENTAL VALDIVIA - RUT: 76966608-7",
-      type: "Recurrente",
+      type: "Foco en costo",
       lastPurchase: "12 de mayo, 2026",
       frequency: "Cada 45 - 60 días",
-      mainLine: "Maquinaria pesada y repuestos",
+      mainLine: "PRIME",
       opportunity: "Alto",
       availableCredit: "$250.000",
     },
@@ -80,7 +80,7 @@ products: [
   },
 ],
     aiSummary:
-      "Este cliente presenta un patrón de compra orientado a mantenimiento preventivo. Históricamente compra filtros y componentes de desgaste cada 45 a 60 días. Se recomienda contactar esta semana y ofrecer un paquete preventivo asociado a su última compra de maquinaria pesada.",
+      "Este cliente tiene un perfil de compra enfocado en confiabilidad donde le da foco al mantenimiento preventivo. Históricamente compra filtros y componentes de desgaste cada 45 a 60 días. Se recomienda contactar y ofrecer un paquete preventivo para potenciar la confiabilidad de su flota.",
   },
   "minera los andes": {
     summary: {

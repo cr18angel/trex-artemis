@@ -51,7 +51,7 @@ export function AiSummaryPanel({ summary }: { summary: string }) {
             )}
             {copied ? "Copiado" : "Copiar resumen"}
           </Button>
-          <Button
+          {/* <Button
             variant="secondary"
             onClick={handleSend}
             className="flex-1 sm:flex-none"
@@ -62,7 +62,7 @@ export function AiSummaryPanel({ summary }: { summary: string }) {
               <Send className="h-4 w-4" aria-hidden="true" />
             )}
             {sent ? "Enviado" : "Enviar a vendedor"}
-          </Button>
+          </Button> */}
           <Button
             variant="outline"
             className="flex-1 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:flex-none"
