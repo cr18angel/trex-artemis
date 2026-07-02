@@ -52,7 +52,7 @@ packages: [
     reason: "Alineado a su ciclo de obra y mantenimientos vencidos.",
     products: ["Aceite hidráulico 20L", "Filtro de aceite", "Filtro de aire", "Refrigerante"],
     probability: 82,
-    model: "LIFTACE E 6/7 ECC 9",
+    model: "LIFTACE E 6/7 ECC 9 - 10001347980",
   },
   {
     id: "filtros",
@@ -60,7 +60,7 @@ packages: [
     reason: "Consumo recurrente de filtros cada 45 días.",
     products: ["Filtro de combustible", "Filtro de aire", "Filtro separador"],
     probability: 74,
-    model: "GR-550XLL-3",
+    model: "GR-550XLL-3 - 542088",
   },
   {
     id: "rodado",
