@@ -11,6 +11,7 @@ import { PackagesSection } from "@/components/trex/packages-section"
 import { PartsLookupSection } from "@/components/trex/parts-lookup-section"
 import { AiSummaryPanel } from "@/components/trex/ai-summary-panel"
 import { analyzeClient } from "@/lib/mock-clients"
+import { saveQuoteData } from "@/lib/quote-storage"
 import type { AnalysisResult, SuggestedPackage } from "@/lib/types"
 
 export default function Page() {
@@ -36,8 +37,17 @@ export default function Page() {
   }
 
   function handlePrepareOffer(pkg: SuggestedPackage) {
-    setNotice(`Oferta preparada: "${pkg.name}" lista para enviar al cliente.`)
-    setTimeout(() => setNotice(null), 3500)
+    const quoteId = `quote-${Date.now()}`
+    const clientName = result?.summary?.name || query || "Cliente no especificado"
+
+    saveQuoteData({
+      id: quoteId,
+      clientName,
+      package: pkg,
+      createdAt: new Date().toISOString(),
+    })
+
+    window.open(`/cotizacion?id=${quoteId}`, "_blank")
   }
 
   return (
