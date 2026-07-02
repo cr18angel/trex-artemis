@@ -35,7 +35,7 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
             <Building2 className="h-6 w-6" aria-hidden="true" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-foreground">{summary.name}</h3>
+            <h3 className="text-xl font-semibold text-foreground">{summary.name} </h3>
             <Badge variant="outline" className={`mt-1 ${clientTypeClasses(summary.type)}`}>
               {summary.type}
             </Badge>

@@ -11,7 +11,7 @@ import type { AnalysisResult } from "./types"
 const MOCK_DB: Record<string, AnalysisResult> = {
   "rental valdivia": {
     summary: {
-      name: "rental valdivia",
+      name: "RENTAL VALDIVIA - RUT: 76966608-7",
       type: "Recurrente",
       lastPurchase: "12 de mayo, 2026",
       frequency: "Cada 45 - 60 días",
