@@ -9,9 +9,9 @@ import type { AnalysisResult } from "./types"
  * does not need to change once a real backend is connected.
  */
 const MOCK_DB: Record<string, AnalysisResult> = {
-  "constructora andina": {
+  "rental valdivia": {
     summary: {
-      name: "Constructora Andina",
+      name: "rental valdivia",
       type: "Recurrente",
       lastPurchase: "12 de mayo, 2026",
       frequency: "Cada 45 - 60 días",
@@ -45,29 +45,32 @@ const MOCK_DB: Record<string, AnalysisResult> = {
           "Contactar al jefe de mantenimiento esta semana y proponer el Kit de mantenimiento preventivo.",
       },
     ],
-    packages: [
-      {
-        id: "prev",
-        name: "Kit mantenimiento preventivo",
-        reason: "Alineado a su ciclo de obra y mantenimientos vencidos.",
-        products: ["Aceite hidráulico 20L", "Filtro de aceite", "Filtro de aire", "Refrigerante"],
-        probability: 82,
-      },
-      {
-        id: "filtros",
-        name: "Kit filtros",
-        reason: "Consumo recurrente de filtros cada 45 días.",
-        products: ["Filtro de combustible", "Filtro de aire", "Filtro separador"],
-        probability: 74,
-      },
-      {
-        id: "rodado",
-        name: "Kit desgaste / tren de rodado",
-        reason: "Uso intensivo de maquinaria pesada en terreno.",
-        products: ["Cadenas", "Rodillos", "Zapatas", "Pasadores"],
-        probability: 58,
-      },
-    ],
+packages: [
+  {
+    id: "prev",
+    name: "Kit mantenimiento preventivo - 1000 horas",
+    reason: "Alineado a su ciclo de obra y mantenimientos vencidos.",
+    products: ["Aceite hidráulico 20L", "Filtro de aceite", "Filtro de aire", "Refrigerante"],
+    probability: 82,
+    model: "LIFTACE E 6/7 ECC 9",
+  },
+  {
+    id: "filtros",
+    name: "Kit filtros - 250 horas",
+    reason: "Consumo recurrente de filtros cada 45 días.",
+    products: ["Filtro de combustible", "Filtro de aire", "Filtro separador"],
+    probability: 74,
+    model: "GR-550XLL-3",
+  },
+  {
+    id: "rodado",
+    name: "Kit desgaste / tren de rodado - 4000 horas",
+    reason: "Uso intensivo de maquinaria pesada en terreno.",
+    products: ["Cadenas", "Rodillos", "Zapatas", "Pasadores"],
+    probability: 58,
+    model: "KIA DE JOSE ",
+  },
+],
     aiSummary:
       "Este cliente presenta un patrón de compra orientado a mantenimiento preventivo. Históricamente compra filtros y componentes de desgaste cada 45 a 60 días. Se recomienda contactar esta semana y ofrecer un paquete preventivo asociado a su última compra de maquinaria pesada.",
   },
@@ -198,9 +201,9 @@ const MOCK_DB: Record<string, AnalysisResult> = {
 }
 
 export const MOCK_CLIENT_NAMES = [
-  "Constructora Andina",
-  "Minera Los Andes",
-  "Transportes del Sur",
+  "Rental Valdivia",
+  "Astilleros Arica",
+  "San Antonio Terminal",
 ]
 
 /** Builds a generic fallback result for any client not in the mock DB. */

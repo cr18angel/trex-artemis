@@ -13,8 +13,10 @@ export interface SuggestedPackage {
   name: string
   reason: string
   products: string[]
-  probability: number // 0-100
+  probability: number
+  model?: string
 }
+
 
 export interface ClientSummary {
   name: string

@@ -40,3 +40,10 @@ http://192.168.0.147:3000/
 
 
 --agregar el historico crediticio 
+
+
+
+
+---agregrar pdf en pre cotizacion 
+
+abajito agregar un buscador pricing donde coloque maquina, modelo y buscar el part number para saber el precio. 

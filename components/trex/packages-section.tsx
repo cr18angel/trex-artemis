@@ -53,13 +53,28 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
                     style={{ width: `${pkg.probability}%` }}
                   />
                 </div>
-                <Button
+           
+                 {/* aca agregar el nombre de la maquina */}
+               <div className="mt-3 border-t border-border pt-3 text-center">
+
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                    Modelo
+                  </p>
+               <p className="mt-1 text-sm font-medium text-foreground">
+                  {pkg.model}
+                </p>
+                </div>
+
+                
+                     <Button
                   variant="outline"
                   className="mt-2 w-full"
                   onClick={() => onPrepareOffer(pkg)}
                 >
                   Preparar oferta
                 </Button>
+
+
               </div>
             </CardContent>
           </Card>
