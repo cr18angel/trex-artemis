@@ -78,23 +78,33 @@ export default function Page() {
         {!loading && result && (
           <div className="flex flex-col gap-8">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-                              {/* <h1>prueba</h1> */}
 
               <div className="flex flex-col gap-6 lg:col-span-3">
                 <SummaryCard summary={result.summary} />
-                <InsightsGrid insights={result.insights} />
+                {/* <InsightsGrid insights={result.insights} /> */}
               </div>
+
+              {/* zona de ia */}
               <div className="lg:col-span-2">
                 <AiSummaryPanel summary={result.aiSummary} />
               </div>
             </div>
+
+
 
             <PackagesSection
               packages={result.packages}
               onPrepareOffer={handlePrepareOffer}
             />
 
+
+             <InsightsGrid insights={result.insights} />
+           
+           
             <PartsLookupSection />
+
+
+            
           </div>
         )}
 
@@ -114,7 +124,7 @@ export default function Page() {
 
       <footer className="border-t border-border py-6">
         <p className="text-center text-sm text-muted-foreground">
-          Trex Smart Sales · MVP de demostración con datos simulados (ERP/SAP B1)
+          Trex Artemis · MVP de demostración con datos simulados (ERP/SAP B1) - El futuro es hoy 
         </p>
       </footer>
     </div>
