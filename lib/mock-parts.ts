@@ -10,13 +10,13 @@ export interface PartLookupResult {
 
 const mockParts: PartLookupResult[] = [
   {
-    modelo: "Kia Rio",
-    serie: "111111",
-    parte: "L5002",
+    modelo: "LIFTACE E 6/7 ECC 9",
+    serie: "10001347980",
+    parte: "94374087",
     parteRepuesto: "L5002",
-    descripcion1: "Filtro de aceite motor Kia Rio",
-    precioVenta: "$18.900",
-    precioMachineDown: "$16.500",
+    descripcion1: "ASSY PEDALS",
+    precioVenta: "$2.671.796",
+    precioMachineDown: "$3.082.791",
   }
 
 ]

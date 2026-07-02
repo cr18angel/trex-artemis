@@ -58,7 +58,7 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
                <div className="mt-3 border-t border-border pt-3 text-center">
 
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Modelo
+                    Modelo / Serie
                   </p>
                <p className="mt-1 text-sm font-medium text-foreground">
                   {pkg.model}
@@ -66,7 +66,7 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
                 </div>
 
                 
-                     <Button
+                 <Button
                   variant="outline"
                   className="mt-2 w-full"
                   onClick={() => onPrepareOffer(pkg)}

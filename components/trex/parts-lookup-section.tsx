@@ -11,9 +11,9 @@ import {
 } from "@/lib/mock-parts"
 
 const DEFAULT_LOOKUP = {
-  modelo: "Kia Rio",
-  serie: "111111",
-  parte: "l5002",
+  modelo: "LIFTACE E 6/7 ECC 9",
+  serie: "10001347980",
+  parte: "94374087",
 }
 
 export function PartsLookupSection() {
