@@ -56,8 +56,12 @@ export function QuotePreview({ quoteId }: QuotePreviewProps) {
   )
 
   const subtotal = rows.reduce((total, row) => total + row.total, 0)
-  const tax = Math.round(subtotal * 0.19)
-  const total = subtotal + tax
+  const discountPercent = quote?.package.discountPercent ?? 0
+  const hasDiscount = discountPercent > 0
+  const discount = hasDiscount ? Math.round(subtotal * (discountPercent / 100)) : 0
+  const net = subtotal - discount
+  const tax = Math.round(net * 0.19)
+  const total = net + tax
 
   if (loaded && !quote) {
     return (
@@ -84,6 +88,7 @@ export function QuotePreview({ quoteId }: QuotePreviewProps) {
   const quoteNumber = `COT-ART-${quote.id.replace("quote-", "")}`
   const clientName = quote.clientName || "Cliente no especificado"
   const model = quote.package.model || "Modelo no especificado"
+  const imageAlt = quote.package.machineImageAlt ?? quote.package.model ?? quote.package.name
 
   return (
     <main className="min-h-screen bg-slate-100 px-4 py-8 text-slate-900 print:bg-white print:p-0">
@@ -118,12 +123,21 @@ export function QuotePreview({ quoteId }: QuotePreviewProps) {
         </header>
 
         <section className="grid gap-4 border-b border-slate-200 py-8 sm:grid-cols-2 lg:grid-cols-4">
+          {quote.package.machineImage && (
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:col-span-2 lg:col-span-4">
+              <img
+                src={quote.package.machineImage}
+                alt={imageAlt}
+                className="mx-auto h-32 max-w-full object-contain"
+              />
+            </div>
+          )}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Cliente</p>
             <p className="mt-2 font-medium text-slate-950">{clientName}</p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Modelo</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Modelo / Serie</p>
             <p className="mt-2 font-medium text-slate-950">{model}</p>
           </div>
           <div>
@@ -134,6 +148,12 @@ export function QuotePreview({ quoteId }: QuotePreviewProps) {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Probabilidad estimada</p>
             <p className="mt-2 font-medium text-slate-950">{quote.package.probability}%</p>
           </div>
+          {hasDiscount && (
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Descuento sugerido</p>
+              <p className="mt-2 font-medium text-slate-950">{discountPercent}%</p>
+            </div>
+          )}
         </section>
 
         <section className="py-8">
@@ -176,6 +196,18 @@ export function QuotePreview({ quoteId }: QuotePreviewProps) {
               <span className="text-slate-500">Subtotal</span>
               <span className="font-medium">{formatCurrency(subtotal)}</span>
             </div>
+            {hasDiscount && (
+              <>
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Descuento {discountPercent}%</span>
+                  <span className="font-medium text-emerald-700">-{formatCurrency(discount)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Neto</span>
+                  <span className="font-medium">{formatCurrency(net)}</span>
+                </div>
+              </>
+            )}
             <div className="flex justify-between">
               <span className="text-slate-500">IVA 19%</span>
               <span className="font-medium">{formatCurrency(tax)}</span>
@@ -195,13 +227,23 @@ export function QuotePreview({ quoteId }: QuotePreviewProps) {
               <dd className="mt-1 text-slate-950">{quote.package.reason}</dd>
             </div>
             <div>
-              <dt className="font-medium text-slate-500">Modelo</dt>
+              <dt className="font-medium text-slate-500">Paquete recomendado</dt>
+              <dd className="mt-1 text-slate-950">{quote.package.name}</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-slate-500">Modelo / Serie</dt>
               <dd className="mt-1 text-slate-950">{model}</dd>
             </div>
             <div>
               <dt className="font-medium text-slate-500">Probabilidad estimada</dt>
               <dd className="mt-1 text-slate-950">{quote.package.probability}%</dd>
             </div>
+            {hasDiscount && (
+              <div>
+                <dt className="font-medium text-slate-500">Descuento sugerido</dt>
+                <dd className="mt-1 text-slate-950">{discountPercent}%</dd>
+              </div>
+            )}
           </dl>
         </section>
 

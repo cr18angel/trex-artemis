@@ -15,7 +15,7 @@ export function clientTypeClasses(type: ClientType): string {
   switch (type) {
     case "Alto potencial":
       return "bg-primary/10 text-primary border-primary/25"
-    case "Recurrente":
+    case "Foco en costo":
       return "bg-chart-4/15 text-chart-4 border-chart-4/30"
     case "Esporádico":
       return "bg-muted text-muted-foreground border-border"

@@ -53,6 +53,8 @@ packages: [
     products: ["54112445 -Filtro De Combustible  ", "54104256 - Main Air Filter Insert ", "54112446 - Fuel Filter Insert", "69949280 - Filtro De Aceite"],
     probability: 82,
     model: "LIFTACE E 6/7 ECC 9 - 10001347980",
+    machineImage: "/machines/liftace.png",
+    machineImageAlt: "Equipo Liftace E 6/7 ECC 9",
   },
   {
     id: "filtros",
@@ -65,6 +67,10 @@ products: [
   "36361325010 - Filtro Aire Primario",
 ],    probability: 74,
     model: "GR-550XLL-3 - 542088",
+    recommended: true,
+    discountPercent: 20,
+    machineImage: "/machines/gr-550xll.png",
+    machineImageAlt: "Equipo GR-550XLL-3",
   },
   {
     id: "rodado",
@@ -77,6 +83,8 @@ products: [
   "FY01-J11 - Filtro de Retorno Hidráulico",
 ],    probability: 58,
     model: "GP25PT-T4.7 - CT17F-70421",
+    machineImage: "/machines/gp25pt.png",
+    machineImageAlt: "Equipo GP25PT-T4.7",
   },
 ],
     aiSummary:

@@ -15,6 +15,10 @@ export interface SuggestedPackage {
   products: string[]
   probability: number
   model?: string
+  recommended?: boolean
+  discountPercent?: number
+  machineImage?: string
+  machineImageAlt?: string
 }
 
 
