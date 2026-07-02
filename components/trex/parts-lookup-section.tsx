@@ -10,10 +10,16 @@ import {
   type PartLookupResult,
 } from "@/lib/mock-parts"
 
+const DEFAULT_LOOKUP = {
+  modelo: "Kia Rio",
+  serie: "111111",
+  parte: "l5002",
+}
+
 export function PartsLookupSection() {
-  const [modelo, setModelo] = useState("")
-  const [serie, setSerie] = useState("")
-  const [parte, setParte] = useState("")
+  const [modelo, setModelo] = useState(DEFAULT_LOOKUP.modelo)
+  const [serie, setSerie] = useState(DEFAULT_LOOKUP.serie)
+  const [parte, setParte] = useState(DEFAULT_LOOKUP.parte)
   const [results, setResults] = useState<PartLookupResult[]>([])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -27,9 +33,9 @@ export function PartsLookupSection() {
   }
 
   function handleClear() {
-    setModelo("")
-    setSerie("")
-    setParte("")
+    setModelo(DEFAULT_LOOKUP.modelo)
+    setSerie(DEFAULT_LOOKUP.serie)
+    setParte(DEFAULT_LOOKUP.parte)
     setResults([])
     setIsModalOpen(false)
   }
@@ -47,6 +53,7 @@ export function PartsLookupSection() {
             Ingresa modelo, serie y número de parte para consultar precios comerciales y Machine Down.
           </p>
         </CardHeader>
+
         <CardContent>
           <form
             className="flex flex-col gap-4"
@@ -65,6 +72,7 @@ export function PartsLookupSection() {
                   aria-label="Modelo"
                 />
               </label>
+
               <label className="flex flex-col gap-2 text-sm font-medium text-foreground">
                 Serie
                 <Input
@@ -74,6 +82,7 @@ export function PartsLookupSection() {
                   aria-label="Serie"
                 />
               </label>
+
               <label className="flex flex-col gap-2 text-sm font-medium text-foreground">
                 Parte
                 <Input
@@ -86,10 +95,11 @@ export function PartsLookupSection() {
             </div>
 
             <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
-              <Button type="button" variant="outline" onClick={handleClear} disabled={!modelo && !serie && !parte}>
+              <Button type="button" variant="outline" onClick={handleClear}>
                 <RotateCcw className="h-4 w-4" aria-hidden="true" />
-                Limpiar
+                Restaurar sugerido
               </Button>
+
               <Button type="submit" disabled={!canSearch}>
                 <Search className="h-4 w-4" aria-hidden="true" />
                 Buscar repuesto
@@ -113,15 +123,24 @@ export function PartsLookupSection() {
                   <h4 id="parts-lookup-modal-title" className="text-lg font-semibold text-foreground">
                     Resultados de repuestos
                   </h4>
+
                   <p className="text-sm text-muted-foreground">
                     Búsqueda para {modelo.trim()} · Serie {serie.trim()} · Parte {parte.trim()}
                   </p>
                 </div>
-                <Button type="button" variant="ghost" size="icon" onClick={() => setIsModalOpen(false)} aria-label="Cerrar modal">
+
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsModalOpen(false)}
+                  aria-label="Cerrar modal"
+                >
                   <X className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </CardHeader>
+
             <CardContent className="overflow-y-auto">
               {results.length > 0 ? (
                 <div className="overflow-x-auto rounded-lg border border-border">
@@ -134,13 +153,16 @@ export function PartsLookupSection() {
                         <th className="px-4 py-3 font-semibold">Precio Machine Down</th>
                       </tr>
                     </thead>
+
                     <tbody className="divide-y divide-border bg-card">
                       {results.map((part) => (
                         <tr key={part.parteRepuesto} className="text-foreground">
                           <td className="px-4 py-3 font-medium">{part.parteRepuesto}</td>
                           <td className="px-4 py-3 text-muted-foreground">{part.descripcion1}</td>
                           <td className="px-4 py-3 font-semibold">{part.precioVenta}</td>
-                          <td className="px-4 py-3 font-semibold text-accent">{part.precioMachineDown}</td>
+                          <td className="px-4 py-3 font-semibold text-accent">
+                            {part.precioMachineDown}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -148,7 +170,9 @@ export function PartsLookupSection() {
                 </div>
               ) : (
                 <div className="rounded-lg border border-dashed border-border bg-secondary/40 px-4 py-10 text-center">
-                  <p className="font-medium text-foreground">No se encontraron repuestos para esta combinación.</p>
+                  <p className="font-medium text-foreground">
+                    No se encontraron repuestos para esta combinación.
+                  </p>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Revisa el modelo, serie o parte e intenta nuevamente.
                   </p>
