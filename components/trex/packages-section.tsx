@@ -23,7 +23,11 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
         {packages.map((pkg) => (
           <Card
             key={pkg.id}
-            className={`flex flex-col ${pkg.recommended ? "border-primary/25 bg-primary/[0.015] shadow-sm ring-1 ring-primary/10" : ""}`}
+          className={`flex flex-col bg-card transition-all ${
+  pkg.recommended
+    ? "border-2 border-primary/50 shadow-lg shadow-primary/10 ring-1 ring-primary/20"
+    : "border-border"
+}`}
           >
             <CardHeader>
               {pkg.machineImage && (

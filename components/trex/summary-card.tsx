@@ -56,7 +56,7 @@ export function SummaryCard({ summary }: { summary: ClientSummary }) {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Field icon={CalendarClock} label="Última compra" value={summary.lastPurchase} />
           <Field icon={Repeat} label="Frecuencia estimada" value={summary.frequency} />
-          <Field icon={Layers} label="Línea principal de compra" value={summary.mainLine} />
+          <Field icon={Layers} label="Líneas de compra" value={summary.mainLine} />
           <Field icon={TrendingUp} label="Perfil de cliente" value={summary.type} />
         </div>
 

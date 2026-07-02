@@ -15,7 +15,7 @@ const MOCK_DB: Record<string, AnalysisResult> = {
       type: "Foco en costo",
       lastPurchase: "12 de mayo, 2026",
       frequency: "Cada 45 - 60 días",
-      mainLine: "PRIME",
+      mainLine: "Prime / Repuestos",
       opportunity: "Alto",
       availableCredit: "$250.000",
     },
@@ -30,36 +30,38 @@ const MOCK_DB: Record<string, AnalysisResult> = {
         kind: "risk",
         title: "Riesgo comercial",
         description:
-          "No registra compra de aceites hidráulicos en los últimos 90 días, lo que suele anticipar mantenimientos vencidos.",
+          "Si se cotizan los 3 KIT’S ocupará el 105% de su línea de crédito.",
       },
       {
         kind: "opportunity",
         title: "Oportunidad recomendada",
         description:
-          "Ventana ideal para ofrecer un paquete preventivo antes del próximo ciclo de obra de junio.",
+          "De acuerdo al perfil, el cliente no ha comprado componentes de desgaste en los últimos 30 días.",
       },
       {
         kind: "action",
         title: "Siguiente acción sugerida",
         description:
-          "Contactar al jefe de mantenimiento esta semana y proponer el Kit de mantenimiento preventivo.",
+          "Revisar con el área de créditos la ampliación de la línea y sugerir al cliente una evaluación para generar backlogs por componentes de desgaste.",
       },
     ],
 packages: [
   {
     id: "prev",
     name: "Kit mantenimiento preventivo - 1000 horas",
-    reason: "Alineado a su ciclo de obra y mantenimientos vencidos.",
+    reason: "Horometro:  horas",
     products: ["54112445 -Filtro De Combustible  ", "54104256 - Main Air Filter Insert ", "54112446 - Fuel Filter Insert", "69949280 - Filtro De Aceite"],
     probability: 82,
     model: "LIFTACE E 6/7 ECC 9 - 10001347980",
-    machineImage: "/machines/liftace.png",
+
+  
+    machineImage: "/machines/Liftace E 67 ECC9.png",
     machineImageAlt: "Equipo Liftace E 6/7 ECC 9",
   },
   {
     id: "filtros",
     name: "Kit filtros - 250 horas",
-    reason: "Consumo recurrente de filtros cada 45 días.",
+    reason: "Horometro:  horas",
 products: [
   "36361427550 - Filtro Aceite Motor",
   "36361325030 - Filtro de Combustible",
@@ -67,15 +69,16 @@ products: [
   "36361325010 - Filtro Aire Primario",
 ],    probability: 74,
     model: "GR-550XLL-3 - 542088",
-    recommended: true,
+        recommended: true,
     discountPercent: 20,
-    machineImage: "/machines/gr-550xll.png",
+  
+    machineImage: "/machines/gr 550.png",
     machineImageAlt: "Equipo GR-550XLL-3",
   },
   {
     id: "rodado",
     name: "Kit desgaste / tren de rodado - 4000 horas",
-    reason: "Uso intensivo de maquinaria pesada en terreno.",
+    reason: "Horometro:  horas",
 products: [
   "FE01-J07 - Filtro de Aceite Motor",
   "FW08-J01 - Filtro de Combustible",
