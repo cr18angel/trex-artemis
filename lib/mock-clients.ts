@@ -49,7 +49,7 @@ packages: [
   {
     id: "prev",
     name: "Kit mantenimiento preventivo - 1000 horas",
-    reason: "Horometro:  horas",
+    reason: "Horómetro actual: 813 horas",
     products: ["54112445 -Filtro De Combustible  ", "54104256 - Main Air Filter Insert ", "54112446 - Fuel Filter Insert", "69949280 - Filtro De Aceite"],
     probability: 82,
     model: "LIFTACE E 6/7 ECC 9 - 10001347980",
@@ -61,7 +61,7 @@ packages: [
   {
     id: "filtros",
     name: "Kit filtros - 250 horas",
-    reason: "Horometro:  horas",
+    reason: "Horómetro actual: 183 horas",
 products: [
   "36361427550 - Filtro Aceite Motor",
   "36361325030 - Filtro de Combustible",
@@ -69,24 +69,23 @@ products: [
   "36361325010 - Filtro Aire Primario",
 ],    probability: 74,
     model: "GR-550XLL-3 - 542088",
-        recommended: true,
-    discountPercent: 20,
+
   
     machineImage: "/machines/gr 550.png",
     machineImageAlt: "Equipo GR-550XLL-3",
   },
   {
     id: "rodado",
-    name: "Kit desgaste / tren de rodado - 4000 horas",
-    reason: "Horometro:  horas",
+    name: "Kit de Mantenimiento eje motriz 4000 horas ",
+    reason: "Horómetro actual: 3600 horas",
 products: [
-  "FE01-J07 - Filtro de Aceite Motor",
-  "FW08-J01 - Filtro de Combustible",
-  "FW07-J01 - Filtro LPG",
-  "FY01-J11 - Filtro de Retorno Hidráulico",
-],    probability: 58,
+  "53598276 - Kit de eje motriz",
+
+],    probability: 90,
     model: "GP25PT-T4.7 - CT17F-70421",
-    machineImage: "/machines/gp25pt.png",
+            recommended: true,
+    discountPercent: 20,
+    machineImage: "/machines/liftace.png",
     machineImageAlt: "Equipo GP25PT-T4.7",
   },
 ],

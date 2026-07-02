@@ -42,11 +42,11 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
 
               <div className="flex items-start justify-between gap-3">
                 <h4 className="font-semibold text-foreground">{pkg.name}</h4>
-                {pkg.recommended && (
-                  <span className="shrink-0 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[11px] font-medium text-primary">
-                    Opción recomendada
-                  </span>
-                )}
+          {pkg.recommended && (
+  <span className="shrink-0 rounded-full border border-red-200 bg-red-50 px-2.5 py-1 text-[11px] font-medium text-red-700">
+    Precio Especial
+  </span>
+)}
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">{pkg.reason}</p>
             </CardHeader>
