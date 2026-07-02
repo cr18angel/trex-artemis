@@ -21,9 +21,29 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {packages.map((pkg) => (
-          <Card key={pkg.id} className="flex flex-col">
+          <Card
+            key={pkg.id}
+            className={`flex flex-col ${pkg.recommended ? "border-primary/25 bg-primary/[0.015] shadow-sm ring-1 ring-primary/10" : ""}`}
+          >
             <CardHeader>
-              <h4 className="font-semibold text-foreground">{pkg.name}</h4>
+              {pkg.machineImage && (
+                <div className="mb-3 flex h-28 items-center justify-center rounded-xl bg-secondary/40 p-3">
+                  <img
+                    src={pkg.machineImage}
+                    alt={pkg.machineImageAlt ?? pkg.model ?? pkg.name}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              )}
+
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="font-semibold text-foreground">{pkg.name}</h4>
+                {pkg.recommended && (
+                  <span className="shrink-0 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[11px] font-medium text-primary">
+                    Opción recomendada
+                  </span>
+                )}
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">{pkg.reason}</p>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col gap-4">
@@ -53,28 +73,23 @@ export function PackagesSection({ packages, onPrepareOffer }: PackagesSectionPro
                     style={{ width: `${pkg.probability}%` }}
                   />
                 </div>
-           
-                 {/* aca agregar el nombre de la maquina */}
-               <div className="mt-3 border-t border-border pt-3 text-center">
 
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Modelo / Serie
-                  </p>
-               <p className="mt-1 text-sm font-medium text-foreground">
-                  {pkg.model}
-                </p>
-                </div>
+                {pkg.model && (
+                  <div className="mt-3 border-t border-border pt-3 text-center">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      Modelo / Serie
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-foreground">{pkg.model}</p>
+                  </div>
+                )}
 
-                
-                 <Button
+                <Button
                   variant="outline"
                   className="mt-2 w-full"
                   onClick={() => onPrepareOffer(pkg)}
                 >
                   Preparar oferta
                 </Button>
-
-
               </div>
             </CardContent>
           </Card>
