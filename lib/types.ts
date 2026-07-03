@@ -1,4 +1,4 @@
-export type ClientType = "Foco en costo" | "Esporádico" | "Alto potencial"
+export type ClientType = "Foco en Confiabilidad" | "Esporádico" | "Alto potencial"
 export type OpportunityLevel = "Alto" | "Medio" | "Bajo"
 
 export interface Insight {

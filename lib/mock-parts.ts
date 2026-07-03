@@ -13,7 +13,7 @@ const mockParts: PartLookupResult[] = [
     modelo: "LIFTACE E 6/7 ECC 9",
     serie: "10001347980",
     parte: "94374087",
-    parteRepuesto: "L5002",
+    parteRepuesto: "94374087",
     descripcion1: "ASSY PEDALS",
     precioVenta: "$2.671.796",
     precioMachineDown: "$3.082.791",
