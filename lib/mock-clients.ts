@@ -82,7 +82,7 @@ products: [
   "53598276 - Kit de eje motriz",
 
 ],    probability: 90,
-    model: "GP25PT-T4.7 - CT17F-70421",
+    model: "Liftace 4532 TCE5 - M13275",
             recommended: true,
     discountPercent: 20,
     machineImage: "/machines/liftace.png",
